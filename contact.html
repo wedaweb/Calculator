@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <label class="switch">
+                        <input type="checkbox" id="darkModeToggle">
+                        <span class="slider round"></span>
+                    </label>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content">
+        <h2>Contact Us</h2>
+        <form action="mailto:robertweda993@gmail.com" method="post" enctype="text/plain">
+            <label for="name">Name:</label>
+            <input placeholder="Enter your name" type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input placeholder="Enter your email" type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea placeholder="Leave a message..." id="message" name="message" rows="4" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
