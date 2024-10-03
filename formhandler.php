@@ -1,6 +1,8 @@
 <?php
+ob_start(); // Start output buffering
+
 // Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_SERVER["REQUEST_METHOD"]) && $_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
     $name = strip_tags(trim($_POST["name"]));
     $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
@@ -11,6 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Set a 400 (bad request) response code and exit
         http_response_code(400);
         echo "Please complete the form and try again.";
+        ob_end_flush(); // Send the output buffer and turn off output buffering
         exit;
     }
 
@@ -43,4 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     http_response_code(403);
     echo "There was a problem with your submission, please try again.";
 }
+
+ob_end_flush(); // Send the output buffer and turn off output buffering
 ?>
